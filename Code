@@ -158,7 +158,7 @@ early_stopping_callback = tf.keras.callbacks.EarlyStopping(
 
 
 def create_model2(num_classes):
-    base_model = MobileNet0(weights='imagenet', include_top=False, input_shape=(128, 128, 3))
+    base_model = MobileNet(weights='imagenet', include_top=False, input_shape=(128, 128, 3))
     x = base_model.output
     x = GlobalAveragePooling2D()(x)
     x = BatchNormalization()(x)
